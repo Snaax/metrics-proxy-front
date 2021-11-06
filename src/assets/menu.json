@@ -1,0 +1,17 @@
+[
+    {
+        "label": "Servers", 
+        "icon": "pi pi-fw pi-video",
+        "to": "/servers"
+    },
+    {
+        "label": "Supervision", 
+        "icon": "pi pi-fw pi-bell",
+        "to": "/supervision-tools"
+    },
+    {
+        "label": "Tools", 
+        "icon": "pi pi-fw pi-cog",
+        "to": "/tools"
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Kubernetes overview",
+        "content": "Permet de voir l'état des pods k8s",
+        "url": "https://grafana.com/"
+    },
+    {
+        "title": "Non kubernetes overview",
+        "content": "Permet de voir l'état des machines non k8s",
+        "url": "https://grafana.com/"
+    }
+]
