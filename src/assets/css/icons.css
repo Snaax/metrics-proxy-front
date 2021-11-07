@@ -38,6 +38,14 @@
     width: 25px;
 }
 
+.pi-sonar {
+    background: url("../icons/sonar-icon.svg");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+}
+
 .pi-external-link-custom {
     background: url("../icons/external-link.svg");
     background-size: 25px 25px;

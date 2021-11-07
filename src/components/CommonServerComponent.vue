@@ -14,6 +14,9 @@
           <Button class="p-button-rounded p-button-secondary" @click="openLink(item.jenkinsUrl)" style="margin-left: .5em">
               <i class="pi pi-jenkins" title="Voir le projet sur Jenkins"/>
           </Button>
+          <Button class="p-button-rounded p-button-secondary" @click="openLink(item.sonarUrl)" style="margin-left: .5em">
+              <i class="pi pi-sonar" title="Voir le projet sur Sonar"/>
+          </Button>
           <Button class="p-button-rounded p-button-secondary" @click="openLink(item.grafanaUrl)" style="margin-left: .5em">
               <i class="pi pi-grafana" title="Voir le projet sur Grafana"/>
           </Button>
@@ -32,6 +35,7 @@ export default {
     var modifiedItem = this.server
     modifiedItem.gitUrl = "https://about.gitlab.com/"
     modifiedItem.jenkinsUrl = "https://www.jenkins.io/"
+    modifiedItem.sonarUrl = "https://www.sonarqube.org/"
     modifiedItem.grafanaUrl = "https://grafana.com/"
 
     return {

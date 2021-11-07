@@ -45,6 +45,9 @@
             <Button class="p-button-rounded p-button-secondary" @click="openLink(item.jenkinsProjectUrl)" style="margin-left: .5em">
                 <i class="pi pi-jenkins" title="Voir le projet sur Jenkins"/>
             </Button>
+            <Button class="p-button-rounded p-button-secondary" @click="openLink(item.sonarProjectUrl)" style="margin-left: .5em">
+                <i class="pi pi-sonar" title="Voir le projet sur Sonar"/>
+            </Button>
           </div>
           <div class="p-col-6">
             <Button class="p-button-rounded p-button-secondary" @click="openLink(item.gitAnsibleUrl)">
@@ -70,6 +73,7 @@ export default {
     var modifiedItem = this.server
     modifiedItem.gitProjectUrl = "https://about.gitlab.com/"
     modifiedItem.jenkinsProjectUrl = "https://www.jenkins.io/"
+    modifiedItem.sonarProjectUrl = "https://www.sonarqube.org/"
     modifiedItem.gitAnsibleUrl = "https://about.gitlab.com/"
     modifiedItem.jenkinsAnsibleUrl = "https://www.jenkins.io/"
     modifiedItem.kubenavUrl = "https://kubenav.io/"
