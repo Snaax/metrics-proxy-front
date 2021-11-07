@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import tools from "../assets/tools.json";
+import tools from "../assets/data/tools.json";
 
 export default {
   name: 'ToolListComponent',

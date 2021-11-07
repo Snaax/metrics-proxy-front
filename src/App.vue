@@ -2,18 +2,14 @@
   <h1>Factory portal</h1>
   
   <div class="menubar">
-    <Menubar :model="items">
-      <template #end>
-        <InputText placeholder="Search" type="text" />
-      </template>
-    </Menubar>
+    <Menubar :model="items" />
   </div>
 
   <router-view/>
 </template>
 
 <script>
-import items from "./assets/menu.json";
+import items from "./assets/data/menu.json";
 
 export default {
   name: 'App',
@@ -39,7 +35,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  margin-top: 60px;
 }
 
 .separator {

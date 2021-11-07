@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import tools from "../assets/supervision-tools.json";
+import tools from "../assets/data/supervision-tools.json";
 
 export default {
   name: 'SupervisionToolListComponent',

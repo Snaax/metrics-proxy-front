@@ -25,6 +25,13 @@
                   </Button>
               </template>
             </Column>
+            <Column header="Kubenav" headerStyle="width: 4rem; text-align: center" bodyStyle="text-align: center; overflow: visible">
+              <template #body>
+                  <Button class="p-button-rounded p-button-secondary" @click="openLink(item.kubenavgrafanaUrl)">
+                      <i class="pi pi-kubenav" title="Voir le projet sur Kubenav"/>
+                  </Button>
+              </template>
+            </Column>
         </DataTable>
       </template>
       <template #footer>
@@ -65,6 +72,7 @@ export default {
     modifiedItem.jenkinsProjectUrl = "https://www.jenkins.io/"
     modifiedItem.gitAnsibleUrl = "https://about.gitlab.com/"
     modifiedItem.jenkinsAnsibleUrl = "https://www.jenkins.io/"
+    modifiedItem.kubenavUrl = "https://kubenav.io/"
     modifiedItem.grafanaUrl = "https://grafana.com/"
 
     return {

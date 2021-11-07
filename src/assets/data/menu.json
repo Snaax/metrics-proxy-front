@@ -6,7 +6,7 @@
     },
     {
         "label": "Supervision", 
-        "icon": "pi pi-fw pi-bell",
+        "icon": "pi pi-fw pi-eye",
         "to": "/supervision-tools"
     },
     {

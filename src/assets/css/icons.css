@@ -1,5 +1,5 @@
 .pi-grafana {
-    background: url("../grafana-icon.svg");
+    background: url("../icons/grafana-icon.svg");
     background-size: 25px 25px;
     background-repeat: no-repeat;
     height: 25px;
@@ -7,7 +7,7 @@
 }
 
 .pi-jenkins {
-    background: url("../jenkins-icon.svg");
+    background: url("../icons/jenkins-icon.svg");
     background-size: 25px 25px;
     background-repeat: no-repeat;
     height: 25px;
@@ -15,7 +15,7 @@
 }
 
 .pi-gitlab {
-    background: url("../gitlab-icon.svg");
+    background: url("../icons/gitlab-icon.svg");
     background-size: 25px 25px;
     background-repeat: no-repeat;
     height: 25px;
@@ -23,7 +23,15 @@
 }
 
 .pi-confluence {
-    background: url("../confluence-icon.svg");
+    background: url("../icons/confluence-icon.svg");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+}
+
+.pi-kubenav {
+    background: url("../icons/kubenav-icon.svg");
     background-size: 25px 25px;
     background-repeat: no-repeat;
     height: 25px;
@@ -31,10 +39,9 @@
 }
 
 .pi-external-link-custom {
-    background: url("../external-link.svg");
+    background: url("../icons/external-link.svg");
     background-size: 25px 25px;
     background-repeat: no-repeat;
-    fill: white;
     height: 25px;
     width: 25px;
 }
