@@ -1,48 +1,48 @@
 [
     {
-        "title": "Jenkins",
+        "name": "Jenkins",
         "content": "Jenkins est un outil permettant de ...",
         "url": "https://jenkins.io",
         "confluence-search": true
     },
     {
-        "title": "Sonar",
+        "name": "Sonar",
         "content": "Sonar est un outil permettant de ...",
         "url": "https://www.sonarqube.org/",
         "confluence-search": true
     },
     {
-        "title": "Harbor",
+        "name": "Harbor",
         "content": "Harbor est un outil permettant de ...",
         "url": "https://goharbor.io/",
         "confluence-search": true
     },
     {
-        "title": "Passbolt",
+        "name": "Passbolt",
         "content": "Passbolt est un outil permettant de ...",
         "url": "https://www.passbolt.com/",
         "confluence-search": true
     },
     {
-        "title": "Keycloak",
+        "name": "Keycloak",
         "content": "Keycloak est un outil permettant de ...",
         "url": "https://www.keycloak.org/",
         "confluence-search": true
     },
     {
-        "title": "Grafana",
+        "name": "Grafana",
         "content": "Grafana est un outil permettant de ...",
         "url": "https://grafana.com/",
         "confluence-search": true
     },
     {
-        "title": "Confluence",
+        "name": "Confluence",
         "content": "Conluence est un outil permettant de ...",
         "url": "https://www.atlassian.com/fr/software/confluence",
         "confluence-search": false
     },
     {
-        "title": "JIRA",
+        "name": "JIRA",
         "content": "JIRA est un outil permettant de ...",
         "url": "https://www.atlassian.com/fr/software/jira",
         "confluence-search": false

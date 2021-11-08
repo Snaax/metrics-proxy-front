@@ -4,8 +4,12 @@
           {{ item.instance }}
       </template>
       <template #content>
-        <p>job : {{ item.job }}</p>
-        <p>status : <i :class="'pi pi-thumbs-' + getStatus(item.metricValue)"></i></p>
+        <div class="p-grid p-jc-center">
+          <div class="p-col-6 p-text-right">job</div>
+          <div class="p-col-6 p-text-left">{{ item.job }}</div>
+          <div class="p-col-6 p-text-right">status</div>
+          <div class="p-col-6 p-text-left"><i :class="'pi pi-thumbs-' + getStatus(item.metricValue)"></i></div>
+        </div>
       </template>
       <template #footer>
           <Button class="p-button-rounded p-button-secondary" @click="openLink(item.gitUrl)">
@@ -17,7 +21,7 @@
           <Button class="p-button-rounded p-button-secondary" @click="openLink(item.sonarUrl)" style="margin-left: .5em">
               <i class="pi pi-sonar" title="Voir le projet sur Sonar"/>
           </Button>
-          <Button class="p-button-rounded p-button-secondary" @click="openLink(item.grafanaUrl)" style="margin-left: .5em">
+          <Button class="p-button-rounded p-button-secondary" @click="openLink(buildGrafanaUrl(item.job))" style="margin-left: .5em">
               <i class="pi pi-grafana" title="Voir le projet sur Grafana"/>
           </Button>
       </template>
@@ -48,6 +52,10 @@ export default {
     },
     getStatus: function (status) {
       return status == 0 ? "down" : "up";
+    },
+    buildGrafanaUrl: function (job) {
+      // TODO : Change to real url
+      return process.env.VUE_APP_GRAFANA_BASE_URL + "" + job;
     }
   }
 };

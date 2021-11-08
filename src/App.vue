@@ -25,7 +25,7 @@ export default {
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #17212f;
+  background-color: #141414;
   overflow-x: hidden;
 }
 

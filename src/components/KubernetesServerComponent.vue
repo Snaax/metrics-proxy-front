@@ -4,11 +4,17 @@
           {{ item.k8sInstance }}
       </template>
       <template #content>
-        <p>job : {{ item.job }}</p>
-        <p>version : {{ item.k8sVersion }}</p>
-        <p>component : {{ item.k8sComponent }}</p>
-        <p>managed by : {{ item.k8sManagedBy }}</p>
-        
+        <div class="p-grid p-jc-center">
+          <div class="p-col-6 p-text-right">job</div>
+          <div class="p-col-6 p-text-left">{{ item.job }}</div>
+          <div class="p-col-6 p-text-right">version</div>
+          <div class="p-col-6 p-text-left">{{ item.k8sVersion }}</div>
+          <div class="p-col-6 p-text-right">component</div>
+          <div class="p-col-6 p-text-left">{{ item.k8sComponent }}</div>
+          <div class="p-col-6 p-text-right">managed by</div>
+          <div class="p-col-6 p-text-left">{{ item.k8sManagedBy }}</div>
+        </div>
+
         <h2>Pods</h2>
 
         <DataTable :value="item.pods" responsiveLayout="scroll">
@@ -19,15 +25,15 @@
               </template>
             </Column>
             <Column header="Grafana" headerStyle="width: 4rem; text-align: center" bodyStyle="text-align: center; overflow: visible">
-              <template #body>
-                  <Button class="p-button-rounded p-button-secondary" @click="openLink(item.grafanaUrl)">
+              <template #body="{data}">
+                  <Button class="p-button-rounded p-button-secondary" @click="openLink(buildGrafanaUrl(data.name))">
                       <i class="pi pi-grafana" title="Voir le projet sur Grafana"/>
                   </Button>
               </template>
             </Column>
             <Column header="Kubenav" headerStyle="width: 4rem; text-align: center" bodyStyle="text-align: center; overflow: visible">
-              <template #body>
-                  <Button class="p-button-rounded p-button-secondary" @click="openLink(item.kubenavgrafanaUrl)">
+              <template #body="{data}">
+                  <Button class="p-button-rounded p-button-secondary" @click="openLink(buildKubenavUrl(data.name))">
                       <i class="pi pi-kubenav" title="Voir le projet sur Kubenav"/>
                   </Button>
               </template>
@@ -76,8 +82,6 @@ export default {
     modifiedItem.sonarProjectUrl = "https://www.sonarqube.org/"
     modifiedItem.gitAnsibleUrl = "https://about.gitlab.com/"
     modifiedItem.jenkinsAnsibleUrl = "https://www.jenkins.io/"
-    modifiedItem.kubenavUrl = "https://kubenav.io/"
-    modifiedItem.grafanaUrl = "https://grafana.com/"
 
     return {
       item: modifiedItem
@@ -89,6 +93,13 @@ export default {
     },
     getStatus: function (status) {
       return status == 0 ? "down" : "up";
+    },
+    buildKubenavUrl: function (name) {
+      return process.env.VUE_APP_KUBENAV_URL + "resources/workloads/pods/internal/" + name;
+    },
+    buildGrafanaUrl: function (name) {
+      // TODO : Change to real url
+      return process.env.VUE_APP_GRAFANA_BASE_URL + "" + name;
     }
   }
 };

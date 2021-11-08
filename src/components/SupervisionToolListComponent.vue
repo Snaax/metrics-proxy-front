@@ -9,7 +9,7 @@
                     {{ tool.content }}
                 </template>
                 <template #footer>
-                    <Button class="p-button-rounded p-button-secondary" @click="handleClick(tool.url)">
+                    <Button class="p-button-rounded p-button-secondary" @click="openLink(buildSupervisionToolUrl(tool.url))">
                         <i class="pi pi-grafana" :title="tool.externalLinkTitle"></i>
                     </Button>
                 </template>
@@ -33,8 +33,11 @@ export default {
     }
   },
   methods: {
-    handleClick: function (url) {
+    openLink: function (url) {
         window.open(url, '_blank');
+    },
+    buildSupervisionToolUrl: function (url) {
+        return process.env.VUE_APP_GRAFANA_BASE_URL + url
     }
   }
 }

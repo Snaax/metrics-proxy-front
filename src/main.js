@@ -11,7 +11,7 @@ import InputText from 'primevue/inputtext';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 
-import 'primevue/resources/themes/vela-blue/theme.css'
+import 'primevue/resources/themes/arya-blue/theme.css'
 import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css'
