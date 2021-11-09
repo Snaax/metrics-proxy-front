@@ -27,14 +27,14 @@
             <Column header="Grafana" headerStyle="width: 4rem; text-align: center" bodyStyle="text-align: center; overflow: visible">
               <template #body="{data}">
                   <Button class="p-button-rounded p-button-secondary" @click="openLink(buildGrafanaUrl(data.name))">
-                      <i class="pi pi-grafana" title="Voir le projet sur Grafana"/>
+                      <i class="pi pi-grafana" title="See project on Grafana"/>
                   </Button>
               </template>
             </Column>
             <Column header="Kubenav" headerStyle="width: 4rem; text-align: center" bodyStyle="text-align: center; overflow: visible">
               <template #body="{data}">
                   <Button class="p-button-rounded p-button-secondary" @click="openLink(buildKubenavUrl(data.name))">
-                      <i class="pi pi-kubenav" title="Voir le projet sur Kubenav"/>
+                      <i class="pi pi-kubenav" title="See project on Kubenav"/>
                   </Button>
               </template>
             </Column>
@@ -46,21 +46,21 @@
           <div class="p-col-6">Ansible</div>
           <div class="p-col-6">
             <Button class="p-button-rounded p-button-secondary" @click="openLink(item.gitProjectUrl)">
-                <i class="pi pi-gitlab" title="Voir le projet sur Gitlab"/>
+                <i class="pi pi-gitlab" title="See project on Gitlab"/>
             </Button>
             <Button class="p-button-rounded p-button-secondary" @click="openLink(item.jenkinsProjectUrl)" style="margin-left: .5em">
-                <i class="pi pi-jenkins" title="Voir le projet sur Jenkins"/>
+                <i class="pi pi-jenkins" title="See project on Jenkins"/>
             </Button>
             <Button class="p-button-rounded p-button-secondary" @click="openLink(item.sonarProjectUrl)" style="margin-left: .5em">
-                <i class="pi pi-sonar" title="Voir le projet sur Sonar"/>
+                <i class="pi pi-sonar" title="See project on Sonar"/>
             </Button>
           </div>
           <div class="p-col-6">
             <Button class="p-button-rounded p-button-secondary" @click="openLink(item.gitAnsibleUrl)">
-                <i class="pi pi-gitlab" title="Voir le projet sur Gitlab"/>
+                <i class="pi pi-gitlab" title="See project on Gitlab"/>
             </Button>
             <Button class="p-button-rounded p-button-secondary" @click="openLink(item.jenkinsAnsibleUrl)" style="margin-left: .5em">
-                <i class="pi pi-jenkins" title="Voir le projet sur Jenkins"/>
+                <i class="pi pi-jenkins" title="See project on Jenkins"/>
             </Button>
           </div>
         </div>

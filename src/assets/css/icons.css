@@ -46,6 +46,22 @@
     width: 25px;
 }
 
+.pi-logs {
+    background: url("../icons/events-icon.svg");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+}
+
+.pi-events {
+    background: url("../icons/log-file-icon.svg");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+}
+
 .pi-external-link-custom {
     background: url("../icons/external-link.svg");
     background-size: 25px 25px;

@@ -18,15 +18,27 @@
         "confluence-search": true
     },
     {
+        "name": "Keycloak",
+        "content": "Keycloak est un outil permettant de ...",
+        "url": "https://keycloak.rennes.ariadnext.com:8443/auth/admin/master/console/#/realms/master",
+        "confluence-search": true
+    },
+    {
         "name": "Passbolt",
         "content": "Passbolt est un outil permettant de ...",
         "url": "https://www.passbolt.com/",
         "confluence-search": true
     },
     {
-        "name": "Keycloak",
-        "content": "Keycloak est un outil permettant de ...",
-        "url": "https://www.keycloak.org/",
+        "name": "Prometheus",
+        "content": "Prometheus est un outil permettant de ...",
+        "url": "http://k8s-monitoring:9090/",
+        "confluence-search": true
+    },
+    {
+        "name": "Alertmanager",
+        "content": "Alertmanager est un outil permettant de ...",
+        "url": "http://k8s-monitoring:9090/alerts",
         "confluence-search": true
     },
     {
@@ -34,6 +46,12 @@
         "content": "Grafana est un outil permettant de ...",
         "url": "https://grafana.com/",
         "confluence-search": true
+    },
+    {
+        "name": "Portail customer-configuration",
+        "content": "Portail customer-configuration est un outil permettant de ...",
+        "url": "https://portal.qualif.ariadnext.com/ariadnext/administration/customer-conf",
+        "confluence-search": false
     },
     {
         "name": "Confluence",
@@ -45,6 +63,12 @@
         "name": "JIRA",
         "content": "JIRA est un outil permettant de ...",
         "url": "https://www.atlassian.com/fr/software/jira",
+        "confluence-search": false
+    },
+    {
+        "name": "Centreon",
+        "content": "Centreon est un outil permettant de ...",
+        "url": "https://centreon-qualif.rennes.ariadnext.com/centreon/main.php",
         "confluence-search": false
     }
 ]
