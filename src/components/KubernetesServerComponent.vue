@@ -19,9 +19,10 @@
 
         <DataTable :value="item.pods" responsiveLayout="scroll">
             <Column field="name" header="Name"></Column>
+            <Column field="port" header="Port"></Column>
             <Column field="status" header="Status">
               <template #body="{data}">
-                <i :class="'pi pi-thumbs-' + getStatus(data)"></i>
+                <i :class="'pi pi-chevron-' + getStatus(data)"></i>
               </template>
             </Column>
             <Column header="Grafana" headerStyle="width: 4rem; text-align: center" bodyStyle="text-align: center; overflow: visible">
@@ -91,8 +92,8 @@ export default {
     openLink: function (url) {
         window.open(url, '_blank');
     },
-    getStatus: function (status) {
-      return status == 0 ? "down" : "up";
+    getStatus: function (data) {
+      return data.status == 0 ? "down" : "up";
     },
     buildKubenavUrl: function (name) {
       return process.env.VUE_APP_KUBENAV_URL + "resources/workloads/pods/internal/" + name;

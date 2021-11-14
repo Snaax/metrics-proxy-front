@@ -1,22 +1,22 @@
 [
     {
-        "title": "Global overview",
-        "content": "Global overview of servers over time",
+        "title": "Global view",
+        "content": "Global view of servers over time",
         "url": "d/8t9ER-vnk/history-status-of-probes"
     },
     {
-        "title": "Kubernetes overview",
-        "content": "K8S pods overview",
-        "url": "https://grafana.com/"
+        "title": "Kubernetes view",
+        "content": "K8S pods view",
+        "url": "CHANGEME"
     },
     {
-        "title": "Non kubernetes overview",
-        "content": "Outside of k8s VMs overview",
+        "title": "Non kubernetes view",
+        "content": "Outside of k8s VMs view",
         "url": "d/hxCyifbWz/node-exporter-full"
     },
     {
         "title": "RabbitMQ",
-        "content": "RabbitMQ VM overview",
+        "content": "RabbitMQ VM view",
         "url": "d/ReLjvPHnk/rabbitmq"
     }
 ]

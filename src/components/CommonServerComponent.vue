@@ -8,7 +8,7 @@
           <div class="p-col-6 p-text-right">job</div>
           <div class="p-col-6 p-text-left">{{ item.job }}</div>
           <div class="p-col-6 p-text-right">status</div>
-          <div class="p-col-6 p-text-left"><i :class="'pi pi-thumbs-' + getStatus(item.metricValue)"></i></div>
+          <div class="p-col-6 p-text-left"><i :class="'pi pi-chevron-' + getStatus(item.metricValue)"></i></div>
         </div>
       </template>
       <template #footer>
@@ -56,8 +56,8 @@ export default {
     openLink: function (url) {
         window.open(url, '_blank');
     },
-    getStatus: function (status) {
-      return status == 0 ? "down" : "up";
+    getStatus: function (metricValue) {
+      return metricValue == 0 ? "down" : "up";
     },
     buildGrafanaUrl: function (name) {
       // TODO : Change to real url
