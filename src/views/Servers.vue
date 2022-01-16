@@ -22,6 +22,7 @@
 <script>
 import { ref, onMounted } from "vue";
 import ServerListComponent from "../components/ServerListComponent.vue"
+import MetricsService from "../services/MetricsService";
 
 export default {
   name: 'Servers',
@@ -41,42 +42,25 @@ export default {
     const loading = ref(true);
     const error = ref(null);
     const searchOptions = ref([
-      {"name": "down", "title": "Filter for down servers only"}, 
-      {"name": "k8s", "title": "Filter for k8s servers only"}, 
-      {"name": "non-k8s", "title": "Filter for non-k8s servers only"}
+      {"name": "down", "title": "Filter for down servers only"}
     ]);
 
     async function fetchData() {
       loading.value = true;
 
-      try {
-        const res = await fetch(process.env.VUE_APP_BACKEND_URL + "metrics/up", {
-          method: "get",
-          headers: {
-            "content-type": "application/json",
-          },
+      MetricsService.getUp()
+        .then(response => {
+          console.log(response.data);
+          data.value = response.data.hosts;
+          initialServers.value = response.data.hosts;
+          servers.value = response.data.hosts;
+        })
+        .catch(e => {
+          console.error(e);
+        })
+        .finally(() => {
+          loading.value = false;
         });
-
-        if (!res.ok) {
-          const error = new Error(res.statusText);
-          error.json = res.json();
-          throw error;
-        }
-
-        const json = await res.json();
-        data.value = json.hosts;
-        initialServers.value = json.hosts;
-        servers.value = json.hosts;
-      } catch (err) {
-        error.value = err;
-        if (err.json) {
-          return err.json.then((json_1) => {
-            error.value.message = json_1.message;
-          });
-        }
-      }
-
-      loading.value = false;
     }
 
     onMounted(() => {
@@ -100,19 +84,15 @@ export default {
         this.initialServers.forEach(server => {
           if(this.selectedSearchOptions.map(o => o.name).includes('down')) {
             let addServer = false;
-            if(server.job == 'k8s' && (this.selectedSearchOptions.map(o => o.name).includes('k8s') || !this.selectedSearchOptions.map(o => o.name).includes('non-k8s'))) {
+            if(server.type == 'K8S') {
               addServer = server.pods.some((pod) => pod.status == 0);
-            } else if(server.job != 'k8s' && (this.selectedSearchOptions.map(o => o.name).includes('non-k8s') || !this.selectedSearchOptions.map(o => o.name).includes('k8s'))) {
-              addServer = server.metricValue == 0;
+            } else if(server.type == 'COMMON') {
+              addServer = server.status == 0;
             }
 
             if(addServer) {
               this.servers.push(server);
             }
-          } else if(server.job == 'k8s' && this.selectedSearchOptions.map(o => o.name).includes('k8s')) {
-            this.servers.push(server);
-          } else if(server.job != 'k8s' && this.selectedSearchOptions.map(o => o.name).includes('non-k8s')) {
-            this.servers.push(server);
           }
         });
       } else {
@@ -126,9 +106,7 @@ export default {
 
       if (this.searchedText != null) {
         this.servers.forEach(element => {
-          if(element.job == 'k8s' && element.k8sInstance.includes(this.searchedText.toLowerCase())) {
-            filteredItems.push(element)
-          } else if(element.instance.includes(this.searchedText.toLowerCase())) {
+          if(element.instance.includes(this.searchedText.toLowerCase())) {
             filteredItems.push(element)
           }
         });

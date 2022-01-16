@@ -40,4 +40,11 @@ html, body {
 .separator {
   padding: 0.5em;
 }
+
+hr {
+  height:1px;
+  border-width:0;
+  color:#383838;
+  background-color:#383838;
+}
 </style>

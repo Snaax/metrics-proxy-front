@@ -62,6 +62,14 @@
     width: 25px;
 }
 
+.pi-slack-color {
+    background: url("../icons/slack-icon.svg");
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    height: 25px;
+    width: 25px;
+}
+
 .pi-servers {
     background: url("../icons/servers-icon.svg");
     background-size: 15px 15px;
